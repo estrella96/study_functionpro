@@ -59,3 +59,20 @@
 ### 偏函数
 - 参数固定的函数 相当于一个由特定参数的函数体
 - functools.partial:把一个函数的某些参数固定 返回一个新函数
+
+# 高级函数 03.py
+## zip
+- 把两个可迭代内容生成一个可迭代的tuple元素类型组成的内容
+## enumerate
+- 与zip功能相似
+- 对可迭代对象的每一个元素 配上一个索引 形成tuple元组
+## collections 模块
+- namedtuple 类似结构体
+    - 可命名的tuple
+- deque
+    - 解决频繁删除插入问题
+- defaultdict
+    - 直接读取dict不存在的属性时，直接返回默认值
+- Counter
+    - 统计字符串个数
+    
