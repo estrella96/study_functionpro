@@ -128,3 +128,66 @@
 - 不支持多个应用并行写入
 - 写回问题
     不会等待持久化对象进行任何修改
+    
+# log 05.py
+- https://www.cnblogs.com/yyds/p/6901864.html
+- logging 模块提供模块级别的函数记录日志
+- 包括四大组件
+## 1.日志相关概念
+- 日志
+- 日志级别level
+    - 不同的用户关注不同的程序信息
+    - DEBUG INFO NOTICE WARNING ERROR CRITICAL ALERT EMERGENCY
+- LOG 作用
+   调试 了解软件运行情况 分析定位问题
+- 日志信息
+   - time
+   - 地点
+   - level
+   - 内容
+## 2 logging模块
+- 初始化/ 写日志实例需要指定级别 当级别等于或高于指定级别才被记录
+- 使用方式
+    - 使用logging
+        - logging.debug
+        - logging.info
+        - logging.warning
+        - logging.critical
+        - logging.log
+        - logging.basicConfig 只在第一次调用时起作用 warning级别
+    - logging四大组件直接定制
+- format log格式
+- 四大组件
+    - 日志器Logger：产生日志的一个接口
+    - 处理器Handler：把产生的日志发送到相应的目的地
+    - 过滤器Filter：更精细的控制哪些日志输出
+    - 格式器Formatter：对输出信息进行格式化
+- Logger
+    - setLevel()
+    - addHandler()/remove
+    - addFilter()/remove 
+    - debug():产生一条debug级别的日志
+    - logging.getLogger() 得到一个logger对象
+- Handler
+    - 把log发送到指定位置
+    - 方法
+        - setLevel
+        - setFormat
+        - addFilter,removeFilter 
+    - Handler是基类
+        logging.StreamHandler 写入流
+        logging.FileHandler 写入磁盘
+        logging.handlers.RotatingFileHandler
+- Format
+    - 直接实例化
+    - 可以继承Format添加特殊内容
+    - 参数
+        - fmt 指定消息格式化字符串
+        - datefmt 指定日期格式字符串
+        - style
+- Filter
+    - 控制传递过来的信息的具体内容
+    - 被logger和handler使用
+    
+    
+   
