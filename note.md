@@ -189,5 +189,28 @@
     - 控制传递过来的信息的具体内容
     - 被logger和handler使用
     
-    
-   
+# 多线程 
+- 线程的共享和互斥
+- 全局解释器锁GIL
+    - python代码执行由python虚拟机控制
+    - 在主循环中只能有一个控制线程在执行
+- python包
+    - _thread 06.py/07.py/08.py
+    - threading
+- threading 09.py
+    - 用threading.Thread生成Thread实例
+        1. t=threading.Thread(target=xxx,args=(xxx,))
+        2. t.start():启动多线程
+        3. t.join():等待多线程执行完成
+    - 守护线程-daemon 10.py
+        - 设置为守护线程的子线程会在主线程结束时自动退出
+        - 守护线程一般不允许离开主线程独立运行
+        - 能否有效与环境相关
+    - 线程属性
+        - threading.currentThread
+        - threading.enumerate
+        - threading.activeCount
+        - thr.setName
+        - thr.getName
+    - 直接用Thread 11.py
+        - 重写run函数
