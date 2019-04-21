@@ -232,3 +232,26 @@
     - 死锁 
     - semphore
         允许多个线程使用同一个资源
+# 线程替代方案
+- subprocess
+    - 完全跳过线程 使用进程
+    - 是派生进程的主要替代方案
+- multiprocessing
+    - 使用threading接口派生 使用子进程
+    - 允许为多核或多cpu派生进程
+- current.futures
+    - 新的异步执行模块
+    - 任务级的操作
+# 多进程 
+- 进程间通讯 (InterProcessComunication,IPC)
+- 进程之间无任何共享状态
+- 进程创建
+    - 直接生成Process对象14.py
+    - 派生父类 15.py
+- 进程ID pid ppid
+    - os.getppid()
+    - os.getpid()
+- 生产者消费者模型 16.py
+    - JoinableQueue
+    - 哨兵的使用
+    
